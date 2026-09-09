@@ -1,0 +1,9 @@
+# crash artefacts — never wanted, in any component
+core
+core.*
+hs_err_pid*.log
+replay_pid*.log
+
+# expense-webapp — Vite + npm build output and dependency tree
+/expense-webapp/node_modules/
+/expense-webapp/dist/
