@@ -6,6 +6,7 @@ import { createCategory, startAddExpense, fillExpenseForm } from "../lib/app";
 test("AC-010-a: an expense can be created with a currency different from the home currency", async ({ page }) => {
   const marker = Date.now();
   const categoryName = `ForeignCcy-${marker}`;
+  const note = `foreign-ccy-note-${marker}`;
   const today = new Date().toISOString().slice(0, 10);
 
   // 1. Sign in, create a category
@@ -19,10 +20,14 @@ test("AC-010-a: an expense can be created with a currency different from the hom
     currency: "EUR",
     category: categoryName,
     date: today,
+    note,
   });
   await page.getByRole("button", { name: "Save Expense" }).click();
 
-  // Assert: the expense is created and shown with its converted home-currency amount
-  const row = page.getByRole("row", { name: new RegExp(`EUR.*\\$`) });
+  // Assert: the expense is created and shown with its converted home-currency amount.
+  // Scoped by this test's own unique note: the shared account accumulates EUR
+  // expenses across runs, so a bare /EUR.*\$/ locator matches more than one row.
+  const row = page.getByRole("row", { name: new RegExp(note) });
   await expect(row).toBeVisible();
+  await expect(row).toHaveText(/EUR.*\$/);
 });

@@ -6,6 +6,7 @@ import { createCategory, startAddExpense, fillExpenseForm } from "../lib/app";
 test("AC-011-a: a foreign-currency expense shows a converted home-currency amount", async ({ page }) => {
   const marker = Date.now();
   const categoryName = `Convert-${marker}`;
+  const note = `convert-note-${marker}`;
   const today = new Date().toISOString().slice(0, 10);
 
   // 1. Sign in, create a category
@@ -19,11 +20,15 @@ test("AC-011-a: a foreign-currency expense shows a converted home-currency amoun
     currency: "EUR",
     category: categoryName,
     date: today,
+    note,
   });
   await page.getByRole("button", { name: "Save Expense" }).click();
 
   // Assert: the list row shows both the original EUR amount and a converted USD amount
-  // (per the wireframe format "15.00 EUR ($16.20)")
-  const row = page.getByRole("row", { name: /EUR.*\$/ });
+  // (per the wireframe format "15.00 EUR ($16.20)"). Scoped by this test's own
+  // unique note: the shared account accumulates EUR expenses across runs, so a
+  // bare /EUR.*\$/ locator matches more than one row.
+  const row = page.getByRole("row", { name: new RegExp(note) });
   await expect(row).toBeVisible();
+  await expect(row).toHaveText(/EUR.*\$/);
 });
