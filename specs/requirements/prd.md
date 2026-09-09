@@ -23,6 +23,8 @@ A personal web application for a two-person household to log daily expenses in s
 7. As a household member, I want to see the total spent per category, so that I can understand where the money goes.
 8. As a household member, I want to set a spending limit for each category, so that I can control overspending.
 9. As a household member, I want to see when a category is approaching or has exceeded its limit, so that I can adjust spending before it gets out of hand.
+10. As a household member, I want to log an expense in a currency other than our home currency, so that I can track spending accurately while traveling or paying in another currency.
+11. As a household member, I want a foreign-currency expense converted into our home currency using the exchange rate on the expense's date, so that totals, category spend, and limits stay comparable across currencies.
 
 ## Product Decisions
 
@@ -30,12 +32,12 @@ A personal web application for a two-person household to log daily expenses in s
 - **Household model**: One shared household ledger. Both household members see and can manage every expense, category, and limit — there is no owner/admin distinction and no per-person permission tier.
 - **Membership**: The household is fixed to two members (the user and their wife); there is no open sign-up or invite flow for additional members.
 - **Limit alerts**: When a category is approaching or has exceeded its limit, this is shown as an in-app visual indicator (e.g. on the category and dashboard views); there is no email, SMS, or push notification.
-- **Currency**: The app tracks spending in a single currency; there is no multi-currency support.
-- **External services**: None required — this is a self-contained personal finance tracker with no third-party payment, banking, or notification integration.
+- **Currency**: The household's home currency is USD. An expense may be logged in a different currency; it is converted to USD using the exchange rate on the expense's date, and all totals, category spend, and limits are shown in USD.
+- **External services**: Frankfurter, a free FX rate lookup, converts a foreign-currency expense to the household's home currency using the rate on the expense's date.
 
 ## Out of Scope
 
-- Multi-currency support or currency conversion.
+- Letting the household change its home currency after the fact, or supporting more than one home currency.
 - Bank account or card integration / automatic transaction import.
 - Receipt scanning or OCR.
 - Budgeting or reporting across more than one household.
