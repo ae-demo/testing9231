@@ -1,0 +1,17 @@
+{
+  "name": "expense-api",
+  "type": "service",
+  "version": "0.1.0",
+  "language": "Ballerina",
+  "buildpack": "docker",
+  "appPath": "expense-api",
+  "entrypoint": "deployment/service",
+  "exposure": "intranet",
+  "dependencies": [
+    { "kind": "platform-resource", "name": "expense-db", "resourceType": "postgres-cnpg", "parameters": {} },
+    { "kind": "platform-resource", "name": "user-auth", "resourceType": "thunder-app", "parameters": {} }
+  ],
+  "description": "Backend API for the household expense tracker. Owns expenses and categories: create/edit/delete expenses (any household member may modify any expense), create/edit/delete categories, compute daily/weekly/monthly totals, per-category totals, and category limit status. Persists to expense-db. Does not send email/push notifications and does not handle sign-in itself — it validates the token the gateway forwards.",
+  "stories": [2, 3, 4, 5, 6, 7, 8, 9],
+  "skillsPinned": ["openapi-conventions", "ballerina", "api-management", "thunder-authentication"]
+}
