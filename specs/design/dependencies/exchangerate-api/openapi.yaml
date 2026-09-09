@@ -1,0 +1,59 @@
+openapi: 3.0.3
+x-aep-derived: true
+info:
+  title: ExchangeRate-API (derived slice)
+  version: v6
+  description: Historical FX rate lookup, derived from the provider's own developer reference (no published OpenAPI document found).
+servers:
+  - url: https://v6.exchangerate-api.com/v6
+paths:
+  /{apiKey}/history/{base}/{year}/{month}/{day}:
+    parameters:
+      - name: apiKey
+        in: path
+        required: true
+        schema: { type: string }
+        description: API key from the ExchangeRate-API dashboard
+      - name: base
+        in: path
+        required: true
+        schema: { type: string }
+        description: ISO 4217 base currency code (the expense's paid currency)
+      - name: year
+        in: path
+        required: true
+        schema: { type: integer }
+      - name: month
+        in: path
+        required: true
+        schema: { type: integer }
+        description: month, no leading zeros
+      - name: day
+        in: path
+        required: true
+        schema: { type: integer }
+        description: day, no leading zeros
+    get:
+      operationId: getHistoricalRates
+      summary: Get historical exchange rates from the base currency to all supported currencies for a specific date
+      x-aep-source: https://www.exchangerate-api.com/docs/historical-data-requests
+      responses:
+        '200':
+          description: historical rates for the requested date, keyed by target currency code
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [result, base_code, conversion_rates]
+                properties:
+                  result: { type: string, enum: [success] }
+                  base_code: { type: string, description: the requested base currency }
+                  year: { type: integer }
+                  month: { type: integer }
+                  day: { type: integer }
+                  conversion_rates:
+                    type: object
+                    description: map of ISO currency code to the rate that converts one unit of base_code into that currency; use conversion_rates.USD as the rate to the home currency
+                    additionalProperties: { type: number, format: double }
+        '404':
+          description: no historical data available for this base/date combination

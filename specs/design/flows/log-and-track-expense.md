@@ -7,13 +7,13 @@ sequenceDiagram
     actor Member as Household Member
     participant expense-webapp
     participant expense-api
-    participant frankfurter
+    participant exchangerateapi as exchangerate-api
 
     Member->>expense-webapp: sign in
     expense-webapp->>expense-api: create expense (amount, currency, category, date, note)
     alt currency is not home currency
-        expense-api->>frankfurter: get rate for currency on expense date
-        frankfurter-->>expense-api: exchange rate
+        expense-api->>exchangerateapi: get historical rate for currency on expense date
+        exchangerateapi-->>expense-api: exchange rate
         expense-api->>expense-api: compute home-currency amount
     end
     expense-api->>expense-api: recompute category total vs limit

@@ -1,0 +1,12 @@
+{
+  "name": "exchangerate-api",
+  "description": "Looks up the historical FX rate for a given currency and date, used to convert a foreign-currency expense into the household's home currency (USD).",
+  "provider": "ExchangeRate-API",
+  "style": "rest-api",
+  "contract": "openapi.yaml",
+  "provenance": { "sourceUrl": "https://www.exchangerate-api.com/docs/historical-data-requests", "fetchedAt": "2026-09-09T00:00:00Z", "sliced": false },
+  "config": [
+    { "key": "EXCHANGERATE_API_KEY", "secret": true, "description": "Your ExchangeRate-API key, from your dashboard at exchangerate-api.com" },
+    { "key": "EXCHANGERATE_API_BASE_URL", "defaultValue": "https://v6.exchangerate-api.com/v6", "description": "Base URL for the ExchangeRate-API v6 endpoints" }
+  ]
+}
