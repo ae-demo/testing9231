@@ -94,3 +94,13 @@ type HistoricalRatesResponse record {|
     int day;
     map<decimal> conversion_rates;
 |};
+
+// exchangerate-api `/latest/{base}` response — used only as a fallback when
+// the historical-rate lookup is unavailable (see exchangerate.bal). Open
+// record: the live response carries extra fields (documentation,
+// time_last_update_*, ...) this service has no use for.
+type LatestRatesResponse record {
+    string result;
+    string base_code;
+    map<decimal> conversion_rates;
+};
