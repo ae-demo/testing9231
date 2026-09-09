@@ -1,0 +1,7 @@
+{
+  "targets": {
+    "expense-api": "https://development-default.apps.94.72.97.95.sslip.io:443/testing9231-expense-api-http",
+    "expense-webapp": "https://http-testing9231-e-development-default-96c9eb3c.apps.94.72.97.95.sslip.io:443/"
+  },
+  "primary": "expense-webapp"
+}

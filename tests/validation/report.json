@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "issue": 7,
+  "commit": "b5b12b5011cce87fc72b53637da0cb269697f893",
+  "generatedAt": "2026-09-09T11:32:09.767Z",
+  "playwrightVersion": "1.61.1",
+  "batches": [
+    {
+      "file": "2026-09-09T11-04-55-449Z.json",
+      "specs": 24
+    },
+    {
+      "file": "2026-09-09T11-05-39-325Z.json",
+      "specs": 24
+    },
+    {
+      "file": "2026-09-09T11-14-09-753Z.json",
+      "specs": 1
+    },
+    {
+      "file": "2026-09-09T11-15-26-355Z.json",
+      "specs": 3
+    },
+    {
+      "file": "2026-09-09T11-16-27-893Z.json",
+      "specs": 3
+    },
+    {
+      "file": "2026-09-09T11-20-14-275Z.json",
+      "specs": 2
+    },
+    {
+      "file": "2026-09-09T11-21-36-984Z.json",
+      "specs": 24
+    },
+    {
+      "file": "2026-09-09T11-30-30-139Z.json",
+      "specs": 2
+    },
+    {
+      "file": "2026-09-09T11-31-17-727Z.json",
+      "specs": 2
+    }
+  ],
+  "totals": {
+    "e2e": {
+      "total": 24,
+      "pass": 20,
+      "fail": 4,
+      "notRun": 0
+    },
+    "manual": 1,
+    "scenario": 0
+  },
+  "criteria": [
+    {
+      "id": "AC-001-a",
+      "requirementId": "REQ-001",
+      "must": "An unauthenticated visitor cannot view household expense data",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-001-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 129,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-001-b",
+      "requirementId": "REQ-001",
+      "must": "A household member can sign in and reach the application",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-001-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 15187,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-002-a",
+      "requirementId": "REQ-002",
+      "must": "Submitting a new expense with amount, category, and date creates it",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-002-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 17474,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-002-b",
+      "requirementId": "REQ-002",
+      "must": "An expense can be created without a note",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-002-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 17724,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-002-c",
+      "requirementId": "REQ-002",
+      "must": "Submitting an expense without a required field (amount, category, or date) is rejected",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-002-c.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 15028,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-003-a",
+      "requirementId": "REQ-003",
+      "must": "An expense logged by one household member appears in the list the other household member sees",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-003-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 33713,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-004-a",
+      "requirementId": "REQ-004",
+      "must": "A household member can edit an expense logged by the other household member",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-004-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 34941,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-004-b",
+      "requirementId": "REQ-004",
+      "must": "A household member can delete an expense logged by the other household member",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-004-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 34914,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-005-a",
+      "requirementId": "REQ-005",
+      "must": "A household member can create a new expense category",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-005-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 15757,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-005-b",
+      "requirementId": "REQ-005",
+      "must": "A household member can edit an existing category's name",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-005-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 16059,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-005-c",
+      "requirementId": "REQ-005",
+      "must": "A household member can delete a category",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-005-c.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 15913,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-006-a",
+      "requirementId": "REQ-006",
+      "must": "The dashboard shows a total for today that reflects logged expenses dated today",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-006-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 17741,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-006-b",
+      "requirementId": "REQ-006",
+      "must": "The dashboard shows a total for the current week that reflects logged expenses within that week",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-006-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 18183,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-006-c",
+      "requirementId": "REQ-006",
+      "must": "The dashboard shows a total for the current month that reflects logged expenses within that month",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-006-c.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 19734,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-007-a",
+      "requirementId": "REQ-007",
+      "must": "Each category shows a total that reflects the sum of expenses logged against it",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-007-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 18827,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-008-a",
+      "requirementId": "REQ-008",
+      "must": "A household member can set a limit amount when creating a category",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-008-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 15059,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-008-b",
+      "requirementId": "REQ-008",
+      "must": "A household member can change an existing category's limit",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-008-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 16680,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-009-a",
+      "requirementId": "REQ-009",
+      "must": "A category whose spend is within its limit shows an ok/on-track indicator",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-009-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 19287,
+      "failure": null,
+      "batch": "2026-09-09T11-31-17-727Z.json"
+    },
+    {
+      "id": "AC-009-b",
+      "requirementId": "REQ-009",
+      "must": "A category whose spend has exceeded its limit shows an exceeded indicator",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-009-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 18541,
+      "failure": null,
+      "batch": "2026-09-09T11-31-17-727Z.json"
+    },
+    {
+      "id": "AC-009-c",
+      "requirementId": "REQ-009",
+      "must": "The limit indicator is shown in-app only, with no email, SMS, or push notification sent",
+      "method": "manual",
+      "status": "manual",
+      "spec": null,
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 0,
+      "failure": null,
+      "batch": null
+    },
+    {
+      "id": "AC-010-a",
+      "requirementId": "REQ-010",
+      "must": "An expense can be created with a currency different from the home currency",
+      "method": "e2e",
+      "status": "fail",
+      "spec": "tests/e2e/specs/AC-010-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 30284,
+      "failure": {
+        "message": "Test timeout of 30000ms exceeded.",
+        "location": "AC-010-a.spec.ts:6"
+      },
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-010-b",
+      "requirementId": "REQ-010",
+      "must": "An expense created without specifying a currency defaults to the home currency",
+      "method": "e2e",
+      "status": "pass",
+      "spec": "tests/e2e/specs/AC-010-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 18695,
+      "failure": null,
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-011-a",
+      "requirementId": "REQ-011",
+      "must": "A foreign-currency expense shows a converted home-currency amount",
+      "method": "e2e",
+      "status": "fail",
+      "spec": "tests/e2e/specs/AC-011-a.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 29843,
+      "failure": {
+        "message": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('row', { name: /EUR.*\\$/ })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" with timeout 10000ms\n  - waiting for getByRole('row', { name: /EUR.*\\$/ })\n",
+        "location": "AC-011-a.spec.ts:6"
+      },
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-011-b",
+      "requirementId": "REQ-011",
+      "must": "The converted amount uses the exchange rate for the expense's own date, not today's date",
+      "method": "e2e",
+      "status": "fail",
+      "spec": "tests/e2e/specs/AC-011-b.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 16635,
+      "failure": {
+        "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 201\nReceived: 403",
+        "location": "AC-011-b.spec.ts:6"
+      },
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    },
+    {
+      "id": "AC-011-c",
+      "requirementId": "REQ-011",
+      "must": "Daily, weekly, monthly, and category totals include the converted home-currency amount of a foreign-currency expense, not its original amount",
+      "method": "e2e",
+      "status": "fail",
+      "spec": "tests/e2e/specs/AC-011-c.spec.ts",
+      "healed": false,
+      "healAttempts": 0,
+      "flaky": false,
+      "durationMs": 31367,
+      "failure": {
+        "message": "Test timeout of 30000ms exceeded.",
+        "location": "AC-011-c.spec.ts:6"
+      },
+      "batch": "2026-09-09T11-21-36-984Z.json"
+    }
+  ]
+}
