@@ -28,9 +28,9 @@ A personal web application for a two-person household to log daily expenses in s
 
 - **Sign-in**: Single sign-on through Thunder, the platform identity provider — every web app on this platform signs users in this way.
 - **Household model**: One shared household ledger. Both household members see and can manage every expense, category, and limit — there is no owner/admin distinction and no per-person permission tier.
-- **Membership**: The household is fixed to two members (the user and their wife); there is no open sign-up or invite flow for additional members. *assumed*
-- **Limit alerts**: When a category is approaching or has exceeded its limit, this is shown as an in-app visual indicator (e.g. on the category and dashboard views); there is no email, SMS, or push notification. *assumed*
-- **Currency**: The app tracks spending in a single currency; there is no multi-currency support. *assumed*
+- **Membership**: The household is fixed to two members (the user and their wife); there is no open sign-up or invite flow for additional members.
+- **Limit alerts**: When a category is approaching or has exceeded its limit, this is shown as an in-app visual indicator (e.g. on the category and dashboard views); there is no email, SMS, or push notification.
+- **Currency**: The app tracks spending in a single currency; there is no multi-currency support.
 - **External services**: None required — this is a self-contained personal finance tracker with no third-party payment, banking, or notification integration.
 
 ## Out of Scope
