@@ -62,10 +62,13 @@ components:
             status: { type: string, enum: [ok, approaching, exceeded] }
     Expense:
       type: object
-      required: [id, amount, expenseDate, categoryId, loggedBy]
+      required: [id, amount, currency, homeCurrencyAmount, expenseDate, categoryId, loggedBy]
       properties:
         id: { type: string }
-        amount: { type: number, format: double }
+        amount: { type: number, format: double, description: amount as paid, in `currency` }
+        currency: { type: string, description: ISO 4217 code the expense was paid in, e.g. USD, EUR }
+        homeCurrencyAmount: { type: number, format: double, description: amount converted to the household's home currency (USD) }
+        exchangeRate: { type: number, format: double, nullable: true, description: rate used for conversion; null when currency is already USD }
         expenseDate: { type: string, format: date }
         note: { type: string }
         categoryId: { type: string }
@@ -77,6 +80,7 @@ components:
       required: [amount, expenseDate, categoryId]
       properties:
         amount: { type: number, format: double }
+        currency: { type: string, default: USD, description: ISO 4217 code the expense was paid in; defaults to the household's home currency }
         expenseDate: { type: string, format: date }
         note: { type: string }
         categoryId: { type: string }

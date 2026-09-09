@@ -82,6 +82,25 @@
         { "id": "AC-009-b", "must": "A category whose spend has exceeded its limit shows an exceeded indicator", "method": "e2e" },
         { "id": "AC-009-c", "must": "The limit indicator is shown in-app only, with no email, SMS, or push notification sent", "method": "manual" }
       ]
+    },
+    {
+      "id": "REQ-010",
+      "statement": "A household member can log an expense in a currency other than the household's home currency",
+      "stories": [10],
+      "criteria": [
+        { "id": "AC-010-a", "must": "An expense can be created with a currency different from the home currency", "method": "e2e" },
+        { "id": "AC-010-b", "must": "An expense created without specifying a currency defaults to the home currency", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-011",
+      "statement": "A foreign-currency expense is converted into the household's home currency using the exchange rate on the expense's date, and totals/category spend/limits stay comparable across currencies",
+      "stories": [11],
+      "criteria": [
+        { "id": "AC-011-a", "must": "A foreign-currency expense shows a converted home-currency amount", "method": "e2e" },
+        { "id": "AC-011-b", "must": "The converted amount uses the exchange rate for the expense's own date, not today's date", "method": "e2e" },
+        { "id": "AC-011-c", "must": "Daily, weekly, monthly, and category totals include the converted home-currency amount of a foreign-currency expense, not its original amount", "method": "e2e" }
+      ]
     }
   ]
 }
