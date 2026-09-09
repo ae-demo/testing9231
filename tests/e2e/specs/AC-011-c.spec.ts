@@ -6,6 +6,7 @@ import { createCategory, startAddExpense, fillExpenseForm } from "../lib/app";
 test("AC-011-c: daily/weekly/monthly and category totals include the converted home-currency amount", async ({ page }) => {
   const marker = Date.now();
   const categoryName = `ConvertTotals-${marker}`;
+  const note = `convert-totals-note-${marker}`;
   const today = new Date().toISOString().slice(0, 10);
 
   // 1. Sign in, create a fresh category
@@ -19,9 +20,12 @@ test("AC-011-c: daily/weekly/monthly and category totals include the converted h
     currency: "EUR",
     category: categoryName,
     date: today,
+    note,
   });
   await page.getByRole("button", { name: "Save Expense" }).click();
-  await expect(page.getByRole("row", { name: /EUR.*\$/ })).toBeVisible();
+  // Scoped by this test's own unique note: the shared account accumulates EUR
+  // expenses across runs, so a bare /EUR.*\$/ locator matches more than one row.
+  await expect(page.getByRole("row", { name: new RegExp(note) })).toBeVisible();
 
   // 3. Read the category's "Spent This Month" — must reflect the converted
   // USD amount, not the raw 50 EUR figure
